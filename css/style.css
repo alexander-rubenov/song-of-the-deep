@@ -1,7 +1,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html, body {
@@ -11,7 +12,7 @@ html, body {
 }
 
 body {
-  background-image: url('../img/start-page-background.png');
+  background-image: url('../img/start-page-background.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,22 +21,29 @@ body {
   height: 100vh;
   color: #ffffff;
   font-family: 'Arial', sans-serif;
-
+  -webkit-transition: background-image 4000ms;
+  -o-transition: background-image 4000ms;
   transition: background-image 4000ms;
 }
 
 .main-first {
+  -webkit-transition: margin-top 300ms, opacity 1000ms;
+  -o-transition: margin-top 300ms, opacity 1000ms;
   transition: margin-top 300ms, opacity 1000ms;
 }
 
 .main-second {
   display: none;
   opacity: 1;
+  -webkit-transition: opacity 2000ms;
+  -o-transition: opacity 2000ms;
   transition: opacity 2000ms;
 }
 
 .main-third {
   display: none;
+  -webkit-transition: opacity 2000ms;
+  -o-transition: opacity 2000ms;
   transition: opacity 2000ms;
 }
 
@@ -91,6 +99,8 @@ input#username {
   height: 2.2vw;
   margin-bottom: 2.5vw;
   border: 0.05vw solid #cccccc;
+  -webkit-transition: border 80ms;
+  -o-transition: border 80ms;
   transition: border 80ms;
 }
 
@@ -119,6 +129,8 @@ img.submarine {
   height: auto;
   position: relative;
   left: -8.2vw;
+  -webkit-transition: left 1700ms;
+  -o-transition: left 1700ms;
   transition: left 1700ms;
 }
 
@@ -139,6 +151,8 @@ header.game-header {
   font-weight: bold;
   padding: 1.2vw 3vw;
   margin-top: -5vw;
+  -webkit-transition: margin-top 1000ms;
+  -o-transition: margin-top 1000ms;
   transition: margin-top 1000ms;
 }
 
@@ -179,6 +193,8 @@ img.recurring {
   width: 9vw;
   height: auto;
   position: absolute;
+  -webkit-transition: left 1000ms, top 1000ms;
+  -o-transition: left 1000ms, top 1000ms;
   transition: left 1000ms, top 1000ms;
 }
 
@@ -191,6 +207,8 @@ img.recurring {
   text-align: center;
   margin-top: -50vw;
 
+  -webkit-transition: margin-top 2000ms;
+  -o-transition: margin-top 2000ms;
   transition: margin-top 2000ms;
 }
 
@@ -230,5 +248,3 @@ table.table-of-best-results th {
 table.table-of-best-results td {
   font-size: 1.1vw;
 }
-
-/**/

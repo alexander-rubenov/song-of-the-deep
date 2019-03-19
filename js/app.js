@@ -59,7 +59,7 @@ function changeStartMenuPageToGamePage() {
 
   submarine.style.left = `100vw`;
   startMenuPage.style.opacity = `0`;
-  if (media) body.style.backgroundImage = `url("img/media-game-background.png")`;
+  if (media) body.style.backgroundImage = `url("img/media-game-background.jpg")`;
     else body.style.backgroundImage = `url("img/game-background.jpg")`;
 
   setTimeout(() => {
@@ -79,12 +79,12 @@ function changeStartMenuPageToGamePage() {
     setInterval(() => {
       if (gameField.children.length >= 40) return;
       createFish();
-    }, 500);
+    }, 300);
   } else {
     setInterval(() => {
       if (gameField.children.length >= 40) return;
       createFish();
-    }, 1700);
+    }, 800);
   };
 
   setTimeout(() => {
@@ -252,7 +252,7 @@ function startTimer() {
 };
 
 function timeIsOver() {
-  body.style.backgroundImage = `url("img/start-page-background.png")`;
+  body.style.backgroundImage = `url("img/start-page-background.jpg")`;
   gamePage.style.opacity = '0';
 
   let endTheGamePageUsername = document.querySelector('.end-the-game-page-username');

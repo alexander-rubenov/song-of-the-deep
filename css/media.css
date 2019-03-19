@@ -1,6 +1,6 @@
 @media (max-width: 480px) {
   body {
-    background-image: url('../img/start-page-background.png');
+    background-image: url('../img/start-page-background.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,21 +10,29 @@
     color: #ffffff;
     font-family: 'Arial', sans-serif;
 
+    -webkit-transition: background-image 4000ms;
+    -o-transition: background-image 4000ms;
     transition: background-image 4000ms;
   }
 
   .main-first {
+    -webkit-transition: margin-top 300ms, opacity 1000ms;
+    -o-transition: margin-top 300ms, opacity 1000ms;
     transition: margin-top 300ms, opacity 1000ms;
   }
 
   .main-second {
     display: none;
     opacity: 1;
+    -webkit-transition: opacity 2000ms;
+    -o-transition: opacity 2000ms;
     transition: opacity 2000ms;
   }
 
   .main-third {
     display: none;
+    -webkit-transition: opacity 2000ms;
+    -o-transition: opacity 2000ms;
     transition: opacity 2000ms;
   }
 
@@ -80,6 +88,8 @@
     height: 7vw;
     margin-bottom: 6vw;
     border: 0.05vw solid #cccccc;
+    -webkit-transition: border 80ms;
+    -o-transition: border 80ms;
     transition: border 80ms;
   }
 
@@ -108,6 +118,8 @@
     height: auto;
     position: relative;
     left: -30vw;
+    -webkit-transition: left 1700ms;
+    -o-transition: left 1700ms;
     transition: left 1700ms;
   }
 
@@ -127,6 +139,8 @@
     font-weight: bold;
     padding: 1.2vw 3vw;
     margin-top: -5vw;
+    -webkit-transition: margin-top 1000ms;
+    -o-transition: margin-top 1000ms;
     transition: margin-top 1000ms;
   }
 
@@ -174,6 +188,8 @@
     width: 25vw;
     height: auto;
     position: absolute;
+    -webkit-transition: left 1000ms, top 1000ms;
+    -o-transition: left 1000ms, top 1000ms;
     transition: left 1000ms, top 1000ms;
   }
 
@@ -185,6 +201,10 @@
     padding: 8vw 4vw;
     text-align: center;
     margin-top: -50vw;
+
+    -webkit-transition: margin-top 2000ms;
+
+    -o-transition: margin-top 2000ms;
 
     transition: margin-top 2000ms;
   }
