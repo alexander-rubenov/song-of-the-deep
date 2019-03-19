@@ -169,6 +169,10 @@ img.recurring {
 
 .game-field {
   height: 89vh;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  width: 100vw;
 }
 
 .js-fish {
@@ -226,3 +230,5 @@ table.table-of-best-results th {
 table.table-of-best-results td {
   font-size: 1.1vw;
 }
+
+/**/

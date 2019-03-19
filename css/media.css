@@ -29,91 +29,91 @@
   }
 
   h1.name-of-game {
-    font-size: 5vw;
+    font-size: 11vw;
     margin-bottom: 5vw;
   }
 
   h3.game-rules {
-    font-size: 3vw;
+    font-size: 9vw;
     margin-bottom: 5vw;
   }
 
   section.start-page-main-section {
-    width: 45vw;
+    width: 95vw;
     margin: 0 auto;
-    margin-top: 7.5vw;
+    margin-top: 40vw;
     text-align: center;
   }
 
   section.start-page-main-section:nth-child(1) {
-    margin-bottom: 30vw;
+    margin-bottom: 50vw;
   }
 
   section.start-page-main-section:nth-child(2) {
     display: none;
-    width: 55vw;
+    width: 95vw;
   }
 
   div.block-input-player-name {
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 0.5vw;
-    width: 25vw;
+    border-radius: 1.2vw;
+    width: 75vw;
     margin: 0 auto;
-    padding: 2.5vw 0;
+    padding: 8vw 0;
   }
 
   div.block-game-rules {
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 0.5vw;
-    width: 50vw;
+    border-radius: 1.2vw;
+    width: 90vw;
     margin: 0 auto;
-    padding: 2vw;
+    padding: 8vw 4vw;
   }
 
   h3.h3-player-name {
-    font-size: 1.6vw;
-    margin-bottom: 1.5vw;
+    font-size: 6vw;
+    margin-bottom: 5vw;
   }
 
   input#username {
-    width: 20vw;
-    height: 2.2vw;
-    margin-bottom: 2.5vw;
+    width: 60vw;
+    height: 7vw;
+    margin-bottom: 6vw;
     border: 0.05vw solid #cccccc;
     transition: border 80ms;
   }
 
   input.submit {
-    width: 15vw;
-    height: 2.75vw;
+    width: 40vw;
+    height: 8vw;
     border-radius: 0.25vw;
     border: 0.05vw solid #cccccc;
     background-color: #ffffff;
-    font-size: 1.1vw;
+    font-size: 4vw;
   }
 
   p.rules {
     text-align: left;
-    font-size: 1.2vw;
-    margin-bottom: 6vw;
+    font-size: 3.7vw;
+    margin-bottom: 10vw;
   }
 
   input.submit-rules {
-    width: 20vw;
-    height: 2.3vw;
+    width: 70vw;
+    height: 10vw;
   }
 
   img.submarine {
-    width: 8.2vw;
+    width: 30vw;
     height: auto;
     position: relative;
-    left: -8.2vw;
+    left: -30vw;
     transition: left 1700ms;
   }
 
   div.submarine-container {
     position: absolute;
-    top: 40.5vw;
+    top: 135vw;
     left: 0;
     width: 100vw;
     overflow: hidden;
@@ -121,8 +121,7 @@
 
   header.game-header {
     width: 100vw;
-    height: 5vw;
-    font-size: 2vw;
+    height: 13vw;
     background-color: rgba(255, 255, 255, 0.5);
     color: #333333;
     font-weight: bold;
@@ -133,35 +132,46 @@
 
   li.header-list-item {
     display: inline-block;
+    padding-top: 1.5vw;
   }
 
   li.header-list-item:nth-child(1) {
-    margin-left: 2vw;
-    width: 20vw;
+    margin-left: 1vw;
+    width: 33vw;
     float: left;
+    font-size: 4.5vw;
+    padding-top: 3vw;
   }
 
   li.header-list-item:nth-child(2) {
-    width: 8vw;
-    margin-left: 22vw;
+    width: 26vw;
+    margin-left: 0.5vw;
+    font-size: 7vw;
   }
 
   li.header-list-item:nth-child(3) {
-    width: 15vw;
+    width: 33vw;
     float: right;
+    font-size: 4.5vw;
+    text-align: right;
+    padding-top: 3vw;
   }
 
   img.recurring {
-    width: 1.4vw;
+    width: 5vw;
     height: auto;
   }
 
   .game-field {
     height: 89vh;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    width: 100vw;
   }
 
   .js-fish {
-    width: 9vw;
+    width: 25vw;
     height: auto;
     position: absolute;
     transition: left 1000ms, top 1000ms;
@@ -169,10 +179,10 @@
 
   .block-result-table {
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 0.5vw;
-    width: 45vw;
+    border-radius: 1.2vw;
+    width: 90vw;
     margin: 0 auto;
-    padding: 2.5vw 0;
+    padding: 8vw 4vw;
     text-align: center;
     margin-top: -50vw;
 
@@ -180,40 +190,45 @@
   }
 
   h2.block-result-table-username {
-    font-size: 2.5vw;
-    margin-bottom: 0.5vw;
+    font-size: 7vw;
+    margin-bottom: 2.8vw;
   }
 
   p.block-result-table-score {
-    font-size: 1.7vw;
-    margin-bottom: 2vw;
+    font-size: 4vw;
+    margin-bottom: 5vw;
   }
 
   table.table-of-best-results {
     margin: 0 auto;
     border-collapse: collapse;
-    margin-bottom: 2vw;
+    margin-bottom: 5vw;
   }
 
   table.table-of-best-results th,
   table.table-of-best-results td {
-    padding: 0.5vw;
-    border: 0.2vw solid #ffffff;
+    padding: 2.5vw;
+    border: 0.8vw solid #ffffff;
   }
 
   table.table-of-best-results caption {
-    font-size: 1.3vw;
-    padding: 0.5vw 0;
+    font-size: 4vw;
+    padding: 2vw 0;
     text-align: left;
   }
 
   table.table-of-best-results th {
-    width: 10vw;
-    font-size: 1.2vw;
+    width: 35vw;
+    font-size: 3.8vw;
   }
 
   table.table-of-best-results td {
-    font-size: 1.1vw;
+    font-size: 3.6vw;
+  }
+
+  input.submit-next-game {
+    width: 60vw;
+    height: 9vw;
   }
 
 }

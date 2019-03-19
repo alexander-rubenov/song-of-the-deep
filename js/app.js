@@ -21,8 +21,11 @@ let
   timerId,
   timer = document.querySelector(`#timer`),
   timerStartValue = timer.innerHTML,
-  buttonNextGame = document.querySelector('.submit-next-game');
+  buttonNextGame = document.querySelector('.submit-next-game'),
+  screenWidth = document.documentElement.clientWidth,
+  media = false;
 
+if (screenWidth <= 480) media = true;
 
 function changeSectionNameEntryToSectionRulesOfGame() {
   if (usernameField.value === '') {
@@ -37,7 +40,8 @@ function changeSectionNameEntryToSectionRulesOfGame() {
   }
 
   sectionRulesOfGame.style.display = `block`;
-  startMenuPage.style.marginTop = `-55vw`;
+  if (media) startMenuPage.style.marginTop = `-125vw`;
+  else startMenuPage.style.marginTop = `-55vw`;
 };
 
 buttonToStartGame.addEventListener(`click`, changeSectionNameEntryToSectionRulesOfGame);
@@ -55,7 +59,8 @@ function changeStartMenuPageToGamePage() {
 
   submarine.style.left = `100vw`;
   startMenuPage.style.opacity = `0`;
-  body.style.backgroundImage = `url("img/game-background.jpg")`;
+  if (media) body.style.backgroundImage = `url("img/media-game-background.png")`;
+    else body.style.backgroundImage = `url("img/game-background.jpg")`;
 
   setTimeout(() => {
     startMenuPage.style.display = `none`;
@@ -70,10 +75,17 @@ function changeStartMenuPageToGamePage() {
     submarine.style.display = `none`;
   }, 1700);
 
-  setInterval(() => {
-    if (gameField.children.length >= 40) return;
-    createFish();
-  }, 500);
+  if (media) {
+    setInterval(() => {
+      if (gameField.children.length >= 40) return;
+      createFish();
+    }, 500);
+  } else {
+    setInterval(() => {
+      if (gameField.children.length >= 40) return;
+      createFish();
+    }, 1700);
+  };
 
   setTimeout(() => {
     startTimer();
@@ -91,7 +103,10 @@ function createFish() {
   fish.classList.add(`js-fish`);
   fish.setAttribute(`src`, `img/fish-${fishSerialNumber}.png`);
 
-  if (fishSerialNumber == 5) fish.style.width = `4vw`;
+  if (fishSerialNumber == 5) {
+    if (media) fish.style.width = `11vw`;
+    else fish.style.width = `4vw`;
+  }
 
   chooseTrajectory(fish);
 };
@@ -106,12 +121,22 @@ function chooseTrajectory(fish) {
 
   switch(numberOfTrajectory) {
     case 1:
-      startLeft = -9;
-      startTop = 30;
+      if (media) {
+        startLeft = -25;
+        startTop = 30;
+      } else {
+        startLeft = -9;
+        startTop = 30;
+      }
       break;
     case 2:
-      startLeft = -9;
-      startTop = 70;
+      if (media) {
+        startLeft = -25;
+        startTop = 70;
+      } else {
+        startLeft = -25;
+        startTop = 70;
+      }
       break;
     case 3:
       startLeft = 25;
@@ -135,10 +160,17 @@ function chooseTrajectory(fish) {
   
   gameField.appendChild(fish);
 
-  setInterval(() => {
-    fish.style.left = parseInt(fish.style.left) + getNumberSignToLeft() + `vw`;
-    fish.style.top = parseInt(fish.style.top) + getNumberSignToTop() + `vh`;
-  }, 600);
+  if (media) {
+    setInterval(() => {
+      fish.style.left = parseInt(fish.style.left) + getNumberSignToLeft() + `vw`;
+      fish.style.top = parseInt(fish.style.top) + getNumberSignToTop() + `vh`;
+    }, 300);
+  } else {
+    setInterval(() => {
+      fish.style.left = parseInt(fish.style.left) + getNumberSignToLeft() + `vw`;
+      fish.style.top = parseInt(fish.style.top) + getNumberSignToTop() + `vh`;
+    }, 600);
+  };
 
   function getNumberSignToLeft() {
     if (parseInt(fish.style.left) <= 9) return getRandomInt(4, 8);
@@ -235,7 +267,8 @@ function timeIsOver() {
   }, 1000);
 
   setTimeout(() => {
-    sectionResultTable.style.marginTop = '10vw';
+    if (media) sectionResultTable.style.marginTop = '20vw';
+    else sectionResultTable.style.marginTop = '10vw';
   }, 1050);
 };
 
