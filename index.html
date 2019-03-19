@@ -35,22 +35,55 @@
     <header class="game-header">
       <ul class="header-list">
         <li class="header-list-item">
-          <span class="player-name">Anna</span>
+          <span class="player-name"></span>
         </li>
         <li class="header-list-item">
-          <span>09:56</span>
+          <span id="timer">02:00</span>
           <img class="recurring" src="img/recurring.png" alt="Изображение не поддерживается вашим браузером">
         </li>
         <li class="header-list-item">
-          <span>90</span><span> баллов</span>
+          <span id="player-score">0</span><span> баллов</span>
         </li>
       </ul>
     </header>
   
     <div class="game-field">
-      <!-- <img class="test-fish" src="img/fish_1.png" alt="бла-бла"> -->
+      
     </div>
 
+  </section>
+
+  <section class="main-third">
+    <div class="block-result-table">
+      <h2 class="block-result-table-username">Поздравляем, <span class="end-the-game-page-username"></span>!</h2>
+      <p class="block-result-table-score"><span>Ваш счет: <span class="end-the-game-page-score"></span> баллов.</span></p>
+
+      <table class="table-of-best-results">
+        <caption>Лучшие результаты</caption>
+        <tr>
+          <th>Имя игрока</th>
+          <th>Кол-во баллов</th>
+        </tr>
+        <tr>
+          <td>Anna</td>
+          <td>12450</td>
+        </tr>
+        <tr>
+          <td>Alexander</td>
+          <td>12440</td>
+        </tr>
+        <tr>
+          <td>Ivan</td>
+          <td>9460</td>
+        </tr>
+        <tr>
+          <td>Petr</td>
+          <td>1220</td>
+        </tr>
+      </table>
+
+      <input type="submit" value="Сыграть ещё" class="submit submit-next-game">
+    </div>
   </section>
 
 

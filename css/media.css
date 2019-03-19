@@ -1,0 +1,219 @@
+@media (max-width: 480px) {
+  body {
+    background-image: url('../img/start-page-background.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ffffff;
+    background-attachment: fixed;
+    height: 100vh;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+
+    transition: background-image 4000ms;
+  }
+
+  .main-first {
+    transition: margin-top 300ms, opacity 1000ms;
+  }
+
+  .main-second {
+    display: none;
+    opacity: 1;
+    transition: opacity 2000ms;
+  }
+
+  .main-third {
+    display: none;
+    transition: opacity 2000ms;
+  }
+
+  h1.name-of-game {
+    font-size: 5vw;
+    margin-bottom: 5vw;
+  }
+
+  h3.game-rules {
+    font-size: 3vw;
+    margin-bottom: 5vw;
+  }
+
+  section.start-page-main-section {
+    width: 45vw;
+    margin: 0 auto;
+    margin-top: 7.5vw;
+    text-align: center;
+  }
+
+  section.start-page-main-section:nth-child(1) {
+    margin-bottom: 30vw;
+  }
+
+  section.start-page-main-section:nth-child(2) {
+    display: none;
+    width: 55vw;
+  }
+
+  div.block-input-player-name {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5vw;
+    width: 25vw;
+    margin: 0 auto;
+    padding: 2.5vw 0;
+  }
+
+  div.block-game-rules {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5vw;
+    width: 50vw;
+    margin: 0 auto;
+    padding: 2vw;
+  }
+
+  h3.h3-player-name {
+    font-size: 1.6vw;
+    margin-bottom: 1.5vw;
+  }
+
+  input#username {
+    width: 20vw;
+    height: 2.2vw;
+    margin-bottom: 2.5vw;
+    border: 0.05vw solid #cccccc;
+    transition: border 80ms;
+  }
+
+  input.submit {
+    width: 15vw;
+    height: 2.75vw;
+    border-radius: 0.25vw;
+    border: 0.05vw solid #cccccc;
+    background-color: #ffffff;
+    font-size: 1.1vw;
+  }
+
+  p.rules {
+    text-align: left;
+    font-size: 1.2vw;
+    margin-bottom: 6vw;
+  }
+
+  input.submit-rules {
+    width: 20vw;
+    height: 2.3vw;
+  }
+
+  img.submarine {
+    width: 8.2vw;
+    height: auto;
+    position: relative;
+    left: -8.2vw;
+    transition: left 1700ms;
+  }
+
+  div.submarine-container {
+    position: absolute;
+    top: 40.5vw;
+    left: 0;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  header.game-header {
+    width: 100vw;
+    height: 5vw;
+    font-size: 2vw;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333333;
+    font-weight: bold;
+    padding: 1.2vw 3vw;
+    margin-top: -5vw;
+    transition: margin-top 1000ms;
+  }
+
+  li.header-list-item {
+    display: inline-block;
+  }
+
+  li.header-list-item:nth-child(1) {
+    margin-left: 2vw;
+    width: 20vw;
+    float: left;
+  }
+
+  li.header-list-item:nth-child(2) {
+    width: 8vw;
+    margin-left: 22vw;
+  }
+
+  li.header-list-item:nth-child(3) {
+    width: 15vw;
+    float: right;
+  }
+
+  img.recurring {
+    width: 1.4vw;
+    height: auto;
+  }
+
+  .game-field {
+    height: 89vh;
+  }
+
+  .js-fish {
+    width: 9vw;
+    height: auto;
+    position: absolute;
+    transition: left 1000ms, top 1000ms;
+  }
+
+  .block-result-table {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5vw;
+    width: 45vw;
+    margin: 0 auto;
+    padding: 2.5vw 0;
+    text-align: center;
+    margin-top: -50vw;
+
+    transition: margin-top 2000ms;
+  }
+
+  h2.block-result-table-username {
+    font-size: 2.5vw;
+    margin-bottom: 0.5vw;
+  }
+
+  p.block-result-table-score {
+    font-size: 1.7vw;
+    margin-bottom: 2vw;
+  }
+
+  table.table-of-best-results {
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-bottom: 2vw;
+  }
+
+  table.table-of-best-results th,
+  table.table-of-best-results td {
+    padding: 0.5vw;
+    border: 0.2vw solid #ffffff;
+  }
+
+  table.table-of-best-results caption {
+    font-size: 1.3vw;
+    padding: 0.5vw 0;
+    text-align: left;
+  }
+
+  table.table-of-best-results th {
+    width: 10vw;
+    font-size: 1.2vw;
+  }
+
+  table.table-of-best-results td {
+    font-size: 1.1vw;
+  }
+
+}

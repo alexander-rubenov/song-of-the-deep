@@ -5,16 +5,37 @@ let
   buttonToStartGame = document.querySelector('.submit-form'),
   startMenuPage = document.querySelector('.main-first'),
   gamePage = document.querySelector('.main-second'),
-  username = document.querySelector('#username'),
+  usernameField = document.querySelector('#username'),
   sectionRulesOfGame = document.querySelector('#section-rules-of-game'),
   buttonEverythingIsClear = document.querySelector('.submit-rules'),
   submarine = document.querySelector('.submarine'),
   gameField = document.querySelector('.game-field'),
+  gameFieldStartValue = gameField.innerHTML,
   gameFieldHeader = document.querySelector('.game-header'),
-  body = document.body;
+  body = document.body,
+  username = document.querySelector('.player-name'),
+  playerScore = document.querySelector('#player-score'),
+  endTheGamePage = document.querySelector('.main-third'),
+  sectionResultTable = document.querySelector('.block-result-table'),
+  buttonResetTheGame = document.querySelector('.recurring'),
+  timerId,
+  timer = document.querySelector(`#timer`),
+  timerStartValue = timer.innerHTML,
+  buttonNextGame = document.querySelector('.submit-next-game');
 
 
 function changeSectionNameEntryToSectionRulesOfGame() {
+  if (usernameField.value === '') {
+    usernameField.style.border = `3px solid #e2534b`;
+    setTimeout(() => {
+      usernameField.style.border = '0.05vw solid #cccccc';
+    }, 100);
+    setTimeout(() => {
+      usernameField.style.border = `3px solid #e2534b`;
+    }, 200);
+    return;
+  }
+
   sectionRulesOfGame.style.display = `block`;
   startMenuPage.style.marginTop = `-55vw`;
 };
@@ -22,7 +43,16 @@ function changeSectionNameEntryToSectionRulesOfGame() {
 buttonToStartGame.addEventListener(`click`, changeSectionNameEntryToSectionRulesOfGame);
 
 
+function makingChangesToUsernameField() {
+  usernameField.style.border = '0.05vw solid #cccccc';
+};
+
+usernameField.addEventListener('input', makingChangesToUsernameField);
+
+
 function changeStartMenuPageToGamePage() {
+  username.textContent = usernameField.value;
+
   submarine.style.left = `100vw`;
   startMenuPage.style.opacity = `0`;
   body.style.backgroundImage = `url("img/game-background.jpg")`;
@@ -41,8 +71,13 @@ function changeStartMenuPageToGamePage() {
   }, 1700);
 
   setInterval(() => {
+    if (gameField.children.length >= 40) return;
     createFish();
-  }, 1700);
+  }, 500);
+
+  setTimeout(() => {
+    startTimer();
+  }, 2200);
 };
 
 buttonEverythingIsClear.addEventListener(`click`, changeStartMenuPageToGamePage);
@@ -54,7 +89,7 @@ function createFish() {
     fishSerialNumber = getRandomInt(1, 5);
 
   fish.classList.add(`js-fish`);
-  fish.setAttribute(`src`, `img/fish_${fishSerialNumber}.png`);
+  fish.setAttribute(`src`, `img/fish-${fishSerialNumber}.png`);
 
   if (fishSerialNumber == 5) fish.style.width = `4vw`;
 
@@ -152,6 +187,74 @@ function removeFishFromGameField(event) {
   if (target.tagName !== `IMG`) return;
 
   gameField.removeChild(target);
-}
+  let fishSerialNumber = +target.getAttribute('src').slice(9, 10);
+  console.log(fishSerialNumber);
+  if (fishSerialNumber === 1 || fishSerialNumber === 2 || fishSerialNumber === 3) playerScore.innerHTML = +playerScore.innerHTML + 30;
+    else if (fishSerialNumber === 4) playerScore.innerHTML = +playerScore.innerHTML + 50;
+    else if (fishSerialNumber === 5) playerScore.innerHTML = +playerScore.innerHTML + 100;
+};
 
 gameField.addEventListener('click', removeFishFromGameField)
+
+function startTimer() {
+  let
+    time = timer.innerHTML,
+    arr = time.split(`:`),
+    m = arr[0],
+    s = arr[1];
+
+  if (s == 0) {
+    if (m == 0) {
+      // когда вышло время
+      timeIsOver();
+      return;
+    };
+    m--;
+    if (m < 10) m = `0` + m;
+    s = 59;
+  } else s--;
+  if (s < 10) s = `0` + s;
+  if (m == 0 && s <= 15) timer.style.color = '#ff0000';
+  document.querySelector(`#timer`).innerHTML = m+`:`+s;
+  timerId = setTimeout(startTimer, 1000);
+};
+
+function timeIsOver() {
+  body.style.backgroundImage = `url("img/start-page-background.png")`;
+  gamePage.style.opacity = '0';
+
+  let endTheGamePageUsername = document.querySelector('.end-the-game-page-username');
+  let endTheGamePageScore = document.querySelector('.end-the-game-page-score');
+  endTheGamePageScore.innerHTML = playerScore.innerHTML;
+
+  endTheGamePageUsername.innerHTML = usernameField.value;
+
+  setTimeout(() => {
+    gamePage.style.display = 'none';
+    endTheGamePage.style.display = 'block';
+  }, 1000);
+
+  setTimeout(() => {
+    sectionResultTable.style.marginTop = '10vw';
+  }, 1050);
+};
+
+function resetTheGame() {
+  clearTimeout(timerId);
+  timer.innerHTML = timerStartValue;
+  setTimeout(() => {
+    startTimer();
+  }, 1000);
+
+  gameField.innerHTML = gameFieldStartValue;
+  playerScore.innerHTML = 0;
+};
+
+buttonResetTheGame.addEventListener('click', resetTheGame);
+
+buttonNextGame.addEventListener('click', () => {
+  window.location.reload();
+});
+
+// добавить возможность выбора времени игры
+// добавить возможность выбора сложности игры

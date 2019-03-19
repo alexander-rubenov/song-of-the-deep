@@ -31,6 +31,12 @@ body {
 .main-second {
   display: none;
   opacity: 1;
+  transition: opacity 2000ms;
+}
+
+.main-third {
+  display: none;
+  transition: opacity 2000ms;
 }
 
 h1.name-of-game {
@@ -85,6 +91,7 @@ input#username {
   height: 2.2vw;
   margin-bottom: 2.5vw;
   border: 0.05vw solid #cccccc;
+  transition: border 80ms;
 }
 
 input.submit {
@@ -162,7 +169,6 @@ img.recurring {
 
 .game-field {
   height: 89vh;
-  border: 1px solid red;
 }
 
 .js-fish {
@@ -172,11 +178,51 @@ img.recurring {
   transition: left 1000ms, top 1000ms;
 }
 
-/*.test-fish {
-  width: 9vw;
-  height: auto;
-  position: absolute;
-  left: 25vw;
-  top: 90vh;
-  transition: left 1000ms, top 1000ms;
-}*/
+.block-result-table {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0.5vw;
+  width: 45vw;
+  margin: 0 auto;
+  padding: 2.5vw 0;
+  text-align: center;
+  margin-top: -50vw;
+
+  transition: margin-top 2000ms;
+}
+
+h2.block-result-table-username {
+  font-size: 2.5vw;
+  margin-bottom: 0.5vw;
+}
+
+p.block-result-table-score {
+  font-size: 1.7vw;
+  margin-bottom: 2vw;
+}
+
+table.table-of-best-results {
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 2vw;
+}
+
+table.table-of-best-results th,
+table.table-of-best-results td {
+  padding: 0.5vw;
+  border: 0.2vw solid #ffffff;
+}
+
+table.table-of-best-results caption {
+  font-size: 1.3vw;
+  padding: 0.5vw 0;
+  text-align: left;
+}
+
+table.table-of-best-results th {
+  width: 10vw;
+  font-size: 1.2vw;
+}
+
+table.table-of-best-results td {
+  font-size: 1.1vw;
+}
