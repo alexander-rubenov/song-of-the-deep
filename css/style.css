@@ -12,9 +12,6 @@ html, body {
 
 body {
   background-image: url('../img/start-page-background.png');
-  /*background-image: url('../img/game-background.jpg');*/
-
-
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -33,10 +30,7 @@ body {
 
 .main-second {
   display: none;
-  /*opacity: 0;*/
   opacity: 1;
-  /*transition: opacity 800ms;*/
-  /*transition: margin-top 1000ms;*/
 }
 
 h1.name-of-game {
@@ -129,7 +123,6 @@ div.submarine-container {
   overflow: hidden;
 }
 
-
 header.game-header {
   width: 100vw;
   height: 5vw;
@@ -140,8 +133,6 @@ header.game-header {
   padding: 1.2vw 3vw;
   margin-top: -5vw;
   transition: margin-top 1000ms;
-
-
 }
 
 li.header-list-item {
@@ -174,10 +165,18 @@ img.recurring {
   border: 1px solid red;
 }
 
-
 .js-fish {
   width: 9vw;
   height: auto;
-  position: relative;
+  position: absolute;
   transition: left 1000ms, top 1000ms;
 }
+
+/*.test-fish {
+  width: 9vw;
+  height: auto;
+  position: absolute;
+  left: 25vw;
+  top: 90vh;
+  transition: left 1000ms, top 1000ms;
+}*/
