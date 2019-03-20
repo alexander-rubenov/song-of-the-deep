@@ -251,4 +251,16 @@
     height: 9vw;
   }
 
+  .number-fish-on-screen {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    font-size: 20vw;
+    opacity: 0.5;
+  }
+
+  .mini-text {
+    font-size: 1.5vw;
+  }
+
 }

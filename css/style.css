@@ -54,7 +54,7 @@ h1.name-of-game {
 
 h3.game-rules {
   font-size: 3vw;
-  margin-bottom: 5vw;
+  margin-bottom: 3vw;
 }
 
 section.start-page-main-section {
@@ -116,12 +116,13 @@ input.submit {
 p.rules {
   text-align: left;
   font-size: 1.2vw;
-  margin-bottom: 6vw;
+  margin-bottom: 1.5vw;
 }
 
 input.submit-rules {
   width: 20vw;
   height: 2.3vw;
+  z-index: 100;
 }
 
 img.submarine {
@@ -140,6 +141,7 @@ div.submarine-container {
   left: 0;
   width: 100vw;
   overflow: hidden;
+  z-index: -1;
 }
 
 header.game-header {
@@ -247,4 +249,16 @@ table.table-of-best-results th {
 
 table.table-of-best-results td {
   font-size: 1.1vw;
+}
+
+.number-fish-on-screen {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  font-size: 10vw;
+  opacity: 0.5;
+}
+
+.mini-text {
+  font-size: 0.5vw;
 }

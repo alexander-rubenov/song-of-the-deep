@@ -23,7 +23,8 @@ let
   timerStartValue = timer.innerHTML,
   buttonNextGame = document.querySelector('.submit-next-game'),
   screenWidth = document.documentElement.clientWidth,
-  media = false;
+  media = false,
+  numberFishOnScreen = document.querySelector('.number-fish-on-screen');
 
 if (screenWidth <= 480) media = true;
 
@@ -40,7 +41,7 @@ function changeSectionNameEntryToSectionRulesOfGame() {
   }
 
   sectionRulesOfGame.style.display = `block`;
-  if (media) startMenuPage.style.marginTop = `-125vw`;
+  if (media) startMenuPage.style.marginTop = `-140vw`;
   else startMenuPage.style.marginTop = `-55vw`;
 };
 
@@ -77,12 +78,12 @@ function changeStartMenuPageToGamePage() {
 
   if (media) {
     setInterval(() => {
-      if (gameField.children.length >= 40) return;
+      if (gameField.children.length >= 40) {timeIsOver(); return;}
       createFish();
     }, 300);
   } else {
     setInterval(() => {
-      if (gameField.children.length >= 40) return;
+      if (gameField.children.length >= 40) {timeIsOver(); return;}
       createFish();
     }, 800);
   };
@@ -159,6 +160,7 @@ function chooseTrajectory(fish) {
   fish.style.top = startTop + `vh`;
   
   gameField.appendChild(fish);
+  numberFishOnScreen.innerHTML++;
 
   if (media) {
     setInterval(() => {
@@ -219,8 +221,9 @@ function removeFishFromGameField(event) {
   if (target.tagName !== `IMG`) return;
 
   gameField.removeChild(target);
+  numberFishOnScreen.innerHTML--;
   let fishSerialNumber = +target.getAttribute('src').slice(9, 10);
-  console.log(fishSerialNumber);
+  
   if (fishSerialNumber === 1 || fishSerialNumber === 2 || fishSerialNumber === 3) playerScore.innerHTML = +playerScore.innerHTML + 30;
     else if (fishSerialNumber === 4) playerScore.innerHTML = +playerScore.innerHTML + 50;
     else if (fishSerialNumber === 5) playerScore.innerHTML = +playerScore.innerHTML + 100;
@@ -252,6 +255,7 @@ function startTimer() {
 };
 
 function timeIsOver() {
+  clearTimeout(timerId);
   body.style.backgroundImage = `url("img/start-page-background.jpg")`;
   gamePage.style.opacity = '0';
 
