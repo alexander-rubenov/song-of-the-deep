@@ -24,7 +24,8 @@ let
   buttonNextGame = document.querySelector('.submit-next-game'),
   screenWidth = document.documentElement.clientWidth,
   media = false,
-  numberFishOnScreen = document.querySelector('.number-fish-on-screen');
+  numberFishOnScreen = document.querySelector('.number-fish-on-screen'),
+  stopGame = false;
 
 if (screenWidth <= 480) media = true;
 
@@ -78,11 +79,13 @@ function changeStartMenuPageToGamePage() {
 
   if (media) {
     setInterval(() => {
-      if (gameField.children.length >= 40) {timeIsOver(); return;}
+      if (stopGame) return;
+      if (gameField.children.length >= 40) {timeIsOver(); return;};
       createFish();
     }, 300);
   } else {
     setInterval(() => {
+      if (stopGame) return;
       if (gameField.children.length >= 40) {timeIsOver(); return;}
       createFish();
     }, 800);
@@ -256,14 +259,19 @@ function startTimer() {
 
 function timeIsOver() {
   clearTimeout(timerId);
+  let endTheGamePageUsername = document.querySelector('.end-the-game-page-username');
+  let endTheGamePageScore = document.querySelector('.end-the-game-page-score');
+  let conclusionAction = document.querySelector('.block-result-table-username');
+
+  if (gameField.children.length >= 40) {
+    conclusionAction.innerHTML = 'На игровом поле более 40 рыбок :(';
+  } else endTheGamePageUsername.innerHTML = usernameField.value;
   body.style.backgroundImage = `url("img/start-page-background.jpg")`;
   gamePage.style.opacity = '0';
 
-  let endTheGamePageUsername = document.querySelector('.end-the-game-page-username');
-  let endTheGamePageScore = document.querySelector('.end-the-game-page-score');
   endTheGamePageScore.innerHTML = playerScore.innerHTML;
 
-  endTheGamePageUsername.innerHTML = usernameField.value;
+  stopGame = true;
 
   setTimeout(() => {
     gamePage.style.display = 'none';
