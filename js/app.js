@@ -1,6 +1,5 @@
 'use strict';
 
-
 let
   buttonToStartGame = document.querySelector('.submit-form'),
   startMenuPage = document.querySelector('.main-first'),
@@ -48,13 +47,11 @@ function changeSectionNameEntryToSectionRulesOfGame() {
 
 buttonToStartGame.addEventListener(`click`, changeSectionNameEntryToSectionRulesOfGame);
 
-
 function makingChangesToUsernameField() {
   usernameField.style.border = '0.05vw solid #cccccc';
 };
 
 usernameField.addEventListener('input', makingChangesToUsernameField);
-
 
 function changeStartMenuPageToGamePage() {
   username.textContent = usernameField.value;
@@ -62,7 +59,7 @@ function changeStartMenuPageToGamePage() {
   submarine.style.left = `100vw`;
   startMenuPage.style.opacity = `0`;
   if (media) body.style.backgroundImage = `url("img/media-game-background.jpg")`;
-    else body.style.backgroundImage = `url("img/game-background.jpg")`;
+  else body.style.backgroundImage = `url("img/game-background.jpg")`;
 
   setTimeout(() => {
     startMenuPage.style.display = `none`;
@@ -80,13 +77,19 @@ function changeStartMenuPageToGamePage() {
   if (media) {
     setInterval(() => {
       if (stopGame) return;
-      if (gameField.children.length >= 40) {timeIsOver(); return;};
+      if (gameField.children.length >= 40) {
+        timeIsOver();
+        return;
+      };
       createFish();
     }, 300);
   } else {
     setInterval(() => {
       if (stopGame) return;
-      if (gameField.children.length >= 40) {timeIsOver(); return;}
+      if (gameField.children.length >= 40) {
+        timeIsOver();
+        return;
+      }
       createFish();
     }, 800);
   };
@@ -97,7 +100,6 @@ function changeStartMenuPageToGamePage() {
 };
 
 buttonEverythingIsClear.addEventListener(`click`, changeStartMenuPageToGamePage);
-
 
 function createFish() {
   let
@@ -123,7 +125,7 @@ function chooseTrajectory(fish) {
   let gameFieldWidth = gameField.clientWidth;
   let gameFieldHeight = gameField.clientHeight;
 
-  switch(numberOfTrajectory) {
+  switch (numberOfTrajectory) {
     case 1:
       if (media) {
         startLeft = -25;
@@ -161,7 +163,7 @@ function chooseTrajectory(fish) {
 
   fish.style.left = startLeft + `vw`;
   fish.style.top = startTop + `vh`;
-  
+
   gameField.appendChild(fish);
   numberFishOnScreen.innerHTML++;
 
@@ -182,7 +184,7 @@ function chooseTrajectory(fish) {
     if (parseInt(fish.style.left) >= 85) return getRandomInt(-4, -8);
 
     let randomNumber = getRandomInt(1, 3);
-    switch(randomNumber) {
+    switch (randomNumber) {
       case 1:
         return getRandomInt(4, 8);
         break;
@@ -199,7 +201,7 @@ function chooseTrajectory(fish) {
     if (parseInt(fish.style.top) >= 80) return getRandomInt(-4, -8);
 
     let randomNumber = getRandomInt(1, 3);
-    switch(randomNumber) {
+    switch (randomNumber) {
       case 1:
         return getRandomInt(4, 8);
         break;
@@ -217,7 +219,6 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-
 function removeFishFromGameField(event) {
   let target = event.target;
 
@@ -226,10 +227,10 @@ function removeFishFromGameField(event) {
   gameField.removeChild(target);
   numberFishOnScreen.innerHTML--;
   let fishSerialNumber = +target.getAttribute('src').slice(9, 10);
-  
+
   if (fishSerialNumber === 1 || fishSerialNumber === 2 || fishSerialNumber === 3) playerScore.innerHTML = +playerScore.innerHTML + 30;
-    else if (fishSerialNumber === 4) playerScore.innerHTML = +playerScore.innerHTML + 50;
-    else if (fishSerialNumber === 5) playerScore.innerHTML = +playerScore.innerHTML + 100;
+  else if (fishSerialNumber === 4) playerScore.innerHTML = +playerScore.innerHTML + 50;
+  else if (fishSerialNumber === 5) playerScore.innerHTML = +playerScore.innerHTML + 100;
 };
 
 gameField.addEventListener('click', removeFishFromGameField)
@@ -243,7 +244,6 @@ function startTimer() {
 
   if (s == 0) {
     if (m == 0) {
-      // когда вышло время
       timeIsOver();
       return;
     };
@@ -253,7 +253,7 @@ function startTimer() {
   } else s--;
   if (s < 10) s = `0` + s;
   if (m == 0 && s <= 15) timer.style.color = '#ff0000';
-  document.querySelector(`#timer`).innerHTML = m+`:`+s;
+  document.querySelector(`#timer`).innerHTML = m + `:` + s;
   timerId = setTimeout(startTimer, 1000);
 };
 
@@ -300,6 +300,3 @@ buttonResetTheGame.addEventListener('click', resetTheGame);
 buttonNextGame.addEventListener('click', () => {
   window.location.reload();
 });
-
-// добавить возможность выбора времени игры
-// добавить возможность выбора сложности игры

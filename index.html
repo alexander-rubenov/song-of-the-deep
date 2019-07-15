@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <title>Song of the Deep</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> -->
 </head>
+
 <body>
-  
+
   <section class="main-first">
     <section class="start-page-main-section">
       <h1 class="name-of-game">Song of the Deep</h1>
       <div class="block-input-player-name">
-        <!-- <form action=""> -->
-          <label for="username"><h3 class="h3-player-name">Введите имя игрока</h3></label>
-          <input type="text" name="username" id="username"><br>
-          <input type="submit" value="Начать игру!" class="submit submit-form">
-        <!-- </form> -->
+        <label for="username">
+          <h3 class="h3-player-name">Введите имя игрока</h3>
+        </label>
+        <input type="text" name="username" id="username"><br>
+        <input type="submit" value="Начать игру!" class="submit submit-form">
       </div>
     </section>
 
     <section class="start-page-main-section" id="section-rules-of-game">
       <h3 class="game-rules">Правила игры</h1>
-      <div class="block-game-rules">
-        <p class="rules">Добро пожаловать в Song of the Deep!<br><br>Правила игры просты, необходимо ловить рыбок и получать за это баллы. За разный улов можно получить разное кол-во баллов.<br>Обычные рыбы дают 30 баллов<br>Пираньи 50 баллов<br>А за медузу вознаграждение 100 баллов!<br><br><b>Но помни главное правило!</b><br>Одновременно на экране не должно оказаться 40 и более рыбок, в таком случае ты проиграешь :(<br><br>Кол-во рыб будет отображаться по центру</p>
-        <input type="submit" value="Всё понятно!" class="submit submit-rules">
-      </div>
+        <div class="block-game-rules">
+          <p class="rules">Добро пожаловать в Song of the Deep!<br><br>Правила игры просты, необходимо ловить рыбок и
+            получать за это баллы. За разный улов можно получить разное кол-во баллов.<br>Обычные рыбы дают 30
+            баллов<br>Пираньи 50 баллов<br>А за медузу вознаграждение 100 баллов!<br><br><b>Но помни главное
+              правило!</b><br>Одновременно на экране не должно оказаться 40 и более рыбок, в таком случае ты проиграешь
+            :(<br><br>Кол-во рыб будет отображаться по центру</p>
+          <input type="submit" value="Всё понятно!" class="submit submit-rules">
+        </div>
     </section>
   </section>
 
-  <div class="submarine-container"><img class="submarine" src="img/submarine.png" alt="Изображение не поддерживается вашим браузером"></div>
+  <div class="submarine-container"><img class="submarine" src="img/submarine.png"
+      alt="Изображение не поддерживается вашим браузером"></div>
 
   <section class="main-second">
     <header class="game-header">
@@ -50,9 +56,9 @@
     </header>
 
     <div><span class="number-fish-on-screen">0</span></div>
-  
+
     <div class="game-field">
-      
+
     </div>
 
   </section>
@@ -60,7 +66,8 @@
   <section class="main-third">
     <div class="block-result-table">
       <h2 class="block-result-table-username">Поздравляем, <span class="end-the-game-page-username"></span>!</h2>
-      <p class="block-result-table-score"><span>Ваш счет: <span class="end-the-game-page-score"></span> баллов.</span></p>
+      <p class="block-result-table-score"><span>Ваш счет: <span class="end-the-game-page-score"></span> баллов.</span>
+      </p>
 
       <table class="table-of-best-results">
         <caption>Лучшие результаты <span class="mini-text">(временно не обновляются, в разработке)</span></caption>
@@ -94,4 +101,5 @@
   <script src="js/app.js"></script>
 
 </body>
+
 </html>

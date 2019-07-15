@@ -201,11 +201,8 @@
     padding: 8vw 4vw;
     text-align: center;
     margin-top: -50vw;
-
     -webkit-transition: margin-top 2000ms;
-
     -o-transition: margin-top 2000ms;
-
     transition: margin-top 2000ms;
   }
 
